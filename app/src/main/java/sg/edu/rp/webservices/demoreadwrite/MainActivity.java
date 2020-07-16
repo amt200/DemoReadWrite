@@ -39,10 +39,9 @@ public class MainActivity extends AppCompatActivity {
             boolean result = folder.mkdir();
             if (result){
                 Log.d("File Read/Write", "Folder created");
-                Log.d("Folder location", folderLocation);
             }
         }
-
+        Log.d("Folder location", folderLocation);
 
 
         btnWrite.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         bufferedReader.close();
                         reader.close();
+                        tvContent.setText(data);
                     }
                     catch (Exception e){
                         Toast.makeText(MainActivity.this, "Failed to read!", Toast.LENGTH_LONG).show();
